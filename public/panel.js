@@ -3,7 +3,7 @@
 
   const I18N = {
     fa: {
-      appName: 'پنل مدیریت ربات', appShort: 'BotPanel', poweredBy: 'قدرت‌گرفته از Cloudflare Workers',
+      appName: 'پنل مدیریت ربات EZpacket', appShort: 'EZpacket', poweredBy: 'قدرت‌گرفته از Cloudflare Workers',
       loginSub: 'برای مدیریت ربات وارد شوید', loginEveryEntry: 'به‌دلیل امنیت، رمز عبور در هر بار ورود به پنل درخواست می‌شود.', password: 'رمز عبور', passwordPh: '••••••••',
       support: 'پشتیبانی', msgTab: 'پیام متنی', pollTab: 'نظرسنجی', photoTab: 'عکس و فایل', resultsTab: 'نتایج و آمار',
       targetUsers: 'کاربران خاص', targetChat: 'کانال / گروه', usersIdsPh: 'آیدی‌های عددی با کاما — مثال: 11111111, 22222222',
@@ -103,7 +103,7 @@
       noticeTitle: 'پیام سازنده', noticeGotIt: 'متوجه شدم',
     },
     en: {
-      appName: 'Bot Admin Panel', appShort: 'BotPanel', poweredBy: 'Powered by Cloudflare Workers',
+      appName: 'EZpacket Bot Admin Panel', appShort: 'EZpacket', poweredBy: 'Powered by Cloudflare Workers',
       loginSub: 'Sign in to manage your bot', loginEveryEntry: 'For security, your password is required every time you open the panel.', password: 'Password', passwordPh: '••••••••',
       support: 'Support', msgTab: 'Text message', pollTab: 'Poll', photoTab: 'Photo & file', resultsTab: 'Results & stats',
       targetUsers: 'Specific users', targetChat: 'Channel / Group', usersIdsPh: 'Numeric IDs, comma-separated — e.g. 11111111, 22222222',
@@ -285,12 +285,12 @@
     band.className = 'rounded-2xl bg-gradient-to-r from-brand-700 via-brand-500 to-sky-400 shadow-lg shadow-brand-500/25 px-4 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-3';
     var p = document.createElement('p');
     p.className = 'text-white text-[13px] sm:text-sm font-bold text-center';
-    p.innerHTML = esc(en ? _0xC.cren : _0xC.crfa) +
-      ' <span class="font-extrabold underline decoration-white/50 underline-offset-4">' + esc(_0xC.nick) + '</span>';
+    p.innerHTML = esc(en ? 'EZpacket — Developed & built by' : 'EZpacket — توسعه‌یافته و ساخته‌شده توسط') +
+      ' <span class="font-extrabold underline decoration-white/50 underline-offset-4">EZI</span>';
     var row = document.createElement('div');
     row.className = 'flex items-center gap-2.5';
-    row.appendChild(_crLink(_TG_SVG, _0xC.tg, _0xC.tgu, 'Telegram'));
-    row.appendChild(_crLink(_IG_SVG, _0xC.ig, _0xC.igu, 'Instagram'));
+    row.appendChild(_crLink(_TG_SVG, 'EZpacket', 'https://t.me/ezpacket', 'Telegram'));
+    row.appendChild(_crLink(_IG_SVG, 'EZpacket', 'https://t.me/ezpacket', 'Instagram'));
     band.appendChild(p);
     band.appendChild(row);
     w.appendChild(band);
@@ -583,7 +583,7 @@
   }
 
   function renderShell() {
-    document.title = 'BotPanel v2 — ' + t(S.route);
+    document.title = 'EZpacket — ' + t(S.route);
     const nav = (mobile) => NAV.filter(n => typeof visibleRoute !== 'function' || visibleRoute(n.id)).filter(n => !mobile || ['dashboard','studio','broadcast','settings'].includes(n.id)).map((n) => {
       const active = S.route === n.id;
       if (mobile) {
@@ -601,7 +601,7 @@
       '<div class="flex items-center gap-3 px-2 py-3 mb-4">' +
       '<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-blue-600 flex items-center justify-center shadow-md shadow-brand-500/25"><i data-lucide="send" class="w-5 h-5 text-white"></i></div>' +
       '<div><div class="font-extrabold leading-tight">' + t('appShort') + '</div>' +
-      '<div class="text-[11px] text-slate-400">Telegram Bot Panel · v' + esc(document.documentElement.dataset.panelVersion || '2') + '</div></div></div>' +
+      '<div class="text-[11px] text-slate-400">EZpacket · Telegram Bot Panel · v' + esc(document.documentElement.dataset.panelVersion || '2') + '</div></div></div>' +
       '<nav class="flex-1 space-y-1 overflow-y-auto">' + nav(false) + '</nav>' +
       '<button data-act="logout" class="flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-rose-500 hover:bg-rose-500/10 transition mt-2"><i data-lucide="log-out" class="w-[18px] h-[18px]"></i>' + t('logout') + '</button>' +
       '<div class="text-[10px] text-slate-400 px-2 pt-3 border-t border-slate-100 dark:border-slate-800 mt-3">' + t('poweredBy') + '</div>' +
